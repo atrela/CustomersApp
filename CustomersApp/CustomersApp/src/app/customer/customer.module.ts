@@ -20,5 +20,5 @@ import { AppRouting } from '.././app.routing';
 
     ]
 })
-export class CoreModule {
+export class CustomerModule {
 }

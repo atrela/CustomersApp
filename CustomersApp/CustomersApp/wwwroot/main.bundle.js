@@ -74,7 +74,7 @@ var AppComponent = (function () {
     return AppComponent;
 }());
 AppComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
         selector: 'app-root',
         template: __webpack_require__("../../../../../src/app/app.component.html"),
         styles: [__webpack_require__("../../../../../src/app/app.component.css")]
@@ -97,7 +97,9 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__core_core_module__ = __webpack_require__("../../../../../src/app/core/core.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_routing__ = __webpack_require__("../../../../../src/app/app.routing.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__core_core_module__ = __webpack_require__("../../../../../src/app/core/core.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__introduction_introduction_component__ = __webpack_require__("../../../../../src/app/introduction/introduction.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -110,23 +112,28 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
 var AppModule = (function () {
     function AppModule() {
     }
     return AppModule;
 }());
 AppModule = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["L" /* NgModule */])({
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["M" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */]
+            __WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_7__introduction_introduction_component__["a" /* IntroductionComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormsModule */],
             __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* HttpModule */],
-            __WEBPACK_IMPORTED_MODULE_5__core_core_module__["a" /* CoreModule */]
+            __WEBPACK_IMPORTED_MODULE_6__core_core_module__["a" /* CoreModule */],
+            __WEBPACK_IMPORTED_MODULE_5__app_routing__["a" /* AppRouting */],
         ],
         providers: [],
+        exports: [__WEBPACK_IMPORTED_MODULE_7__introduction_introduction_component__["a" /* IntroductionComponent */]],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
@@ -135,10 +142,27 @@ AppModule = __decorate([
 
 /***/ }),
 
+/***/ "../../../../../src/app/app.routing.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppRouting; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__introduction_introduction_component__ = __webpack_require__("../../../../../src/app/introduction/introduction.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+
+
+var appRoutes = [
+    { path: '', component: __WEBPACK_IMPORTED_MODULE_0__introduction_introduction_component__["a" /* IntroductionComponent */] }
+];
+var AppRouting = __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* RouterModule */].forRoot(appRoutes);
+//# sourceMappingURL=app.routing.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/core/content/content.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<div class=\"container\">\r\n  <h1 class=\"mt-5\">Logo Nav by Start Bootstrap</h1>\r\n  <p>The logo in the navbar is now a default Bootstrap feature in Bootstrap 4! Make sure to set the width and height of the logo within the HTML. For best results, it's recommended that you use an SVG image as your logo.</p>\r\n  <!--<router-outlet></router-outlet>-->\r\n</div>\r\n"
+module.exports = "<div class=\"container\">\r\n  <router-outlet></router-outlet>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -161,7 +185,7 @@ var ContentComponent = (function () {
     return ContentComponent;
 }());
 ContentComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
         selector: 'app-content',
         template: __webpack_require__("../../../../../src/app/core/content/content.component.html")
     })
@@ -179,6 +203,7 @@ ContentComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__navigation_navigation_component__ = __webpack_require__("../../../../../src/app/core/navigation/navigation.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__content_content_component__ = __webpack_require__("../../../../../src/app/core/content/content.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_routing__ = __webpack_require__("../../../../../src/app/app.routing.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -189,14 +214,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 //import { AppRouteModule } from '../app.routing';
 
 
+
 var CoreModule = (function () {
     function CoreModule() {
     }
     return CoreModule;
 }());
 CoreModule = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* NgModule */])({
-        imports: [],
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgModule */])({
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_3__app_routing__["a" /* AppRouting */]
+        ],
         exports: [
             __WEBPACK_IMPORTED_MODULE_1__navigation_navigation_component__["a" /* NavigationComponent */],
             __WEBPACK_IMPORTED_MODULE_2__content_content_component__["a" /* ContentComponent */]
@@ -239,13 +267,49 @@ var NavigationComponent = (function () {
     return NavigationComponent;
 }());
 NavigationComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
         selector: 'app-navigation',
         template: __webpack_require__("../../../../../src/app/core/navigation/navigation.component.html")
     })
 ], NavigationComponent);
 
 //# sourceMappingURL=navigation.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/introduction/introduction.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<h1 class=\"mt-5\">Hello!</h1>\r\n<br />\r\n<br />\r\n<div>This application is designed to manage customers. You can do the following actions:\r\n  <ul>\r\n    <li>Create, update or delete a customer</li>\r\n    <li>Show a list of all customers</li>\r\n  </ul>\r\n  </div>\r\n\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/introduction/introduction.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IntroductionComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var IntroductionComponent = (function () {
+    function IntroductionComponent() {
+    }
+    return IntroductionComponent;
+}());
+IntroductionComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'app-introduction',
+        template: __webpack_require__("../../../../../src/app/introduction/introduction.component.html")
+    })
+], IntroductionComponent);
+
+//# sourceMappingURL=introduction.component.js.map
 
 /***/ }),
 
@@ -280,7 +344,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_20" /* enableProdMode */])();
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_23" /* enableProdMode */])();
 }
 Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */])
     .catch(function (err) { return console.log(err); });
