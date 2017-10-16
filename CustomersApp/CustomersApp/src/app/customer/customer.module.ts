@@ -1,23 +1,29 @@
 import { NgModule } from '@angular/core';
 
-import { NavigationComponent } from './navigation/navigation.component';
-import { ContentComponent } from './content/content.component';
-import { AppRouting } from '.././app.routing';
+import { CustomerRouting } from './customer.routing';
+import { CustomerListComponent } from "./customer-list/customer-list.component";
+import { CustomerDetailsComponent } from "./customer-details/customer-details.component";
+import { CustomerService } from "./customer.service";
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
     imports: [
-        AppRouting
+        CustomerRouting,
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule
     ],
     exports: [
-        NavigationComponent,
-        ContentComponent
+        CustomerListComponent,
+        CustomerDetailsComponent
     ],
     declarations: [
-        NavigationComponent,
-        ContentComponent
+        CustomerListComponent,
+        CustomerDetailsComponent
     ],
     providers: [
-
+        CustomerService
     ]
 })
 export class CustomerModule {

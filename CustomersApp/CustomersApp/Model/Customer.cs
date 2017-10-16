@@ -14,7 +14,7 @@ namespace CustomersApp.Model
     public string Name { get; set; }
 
     [Required]
-    public string SureName { get; set; }
+    public string Surname { get; set; }
 
     [Required]
     public string Address { get; set; }

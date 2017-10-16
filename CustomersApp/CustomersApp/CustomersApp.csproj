@@ -11,6 +11,7 @@
     <None Remove="src\app\core\content\content.component.ts" />
     <None Remove="src\app\core\core.module.ts" />
     <None Remove="src\app\customer\customer-details\customer-details.component.ts" />
+    <None Remove="src\app\customer\customer-list\customer.service.ts" />
     <None Remove="src\app\customer\customer.module.ts" />
     <None Remove="src\app\customer\customer.routing.ts" />
     <None Remove="src\app\introduction\introduction.component.ts" />
@@ -36,8 +37,10 @@
     <TypeScriptCompile Include="src\app\core\core.module.ts" />
     <TypeScriptCompile Include="src\app\customer\customer-details\customer-details.component.ts" />
     <TypeScriptCompile Include="src\app\customer\customer-list\customer-list.component.ts" />
+    <TypeScriptCompile Include="src\app\customer\customer.service.ts" />
     <TypeScriptCompile Include="src\app\customer\customer.module.ts" />
     <TypeScriptCompile Include="src\app\customer\customer.routing.ts" />
+    <TypeScriptCompile Include="src\app\customer\customer.ts" />
     <TypeScriptCompile Include="src\app\introduction\introduction.component.ts" />
   </ItemGroup>
 

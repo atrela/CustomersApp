@@ -12,13 +12,11 @@ namespace CustomersApp
   [Route("api/[controller]")]
   public class CustomerController : Controller
   {
-    private readonly CustomerContext _context;
-    private readonly CustomerRepository _repository;
+    private readonly ICustomerRepository _repository;
 
-    public CustomerController(CustomerContext context)
+    public CustomerController(ICustomerRepository repository)
     {
-      _context = context;
-      _repository = new CustomerRepository(_context);
+      _repository = repository;
     }
 
     [HttpGet]
@@ -27,23 +25,24 @@ namespace CustomersApp
       return _repository.GetAll();
     }
 
-    // GET api/values/5
     [HttpGet("{id}")]
-    public string Get(int id)
+    public Customer Get(int id)
     {
-      return "value";
+      return _repository.Get(id);
     }
 
     // POST api/values
     [HttpPost]
-    public void Post([FromBody]string value)
+    public void Post([FromBody]Customer customer)
     {
+      _repository.Add(customer);
     }
 
     // PUT api/values/5
     [HttpPut("{id}")]
-    public void Put(int id, [FromBody]string value)
+    public void Put(int id, [FromBody]Customer customer)
     {
+      _repository.Update(customer);
     }
 
     // DELETE api/values/5

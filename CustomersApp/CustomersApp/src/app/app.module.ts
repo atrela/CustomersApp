@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppRouting } from './app.routing';
 import { CoreModule } from './core/core.module';
 import { IntroductionComponent } from './introduction/introduction.component';
+import { CustomerModule } from "./customer/customer.module";
 
 @NgModule({
     declarations: [
@@ -17,6 +18,7 @@ import { IntroductionComponent } from './introduction/introduction.component';
         FormsModule,
         HttpModule,
         CoreModule,
+        CustomerModule,
         AppRouting,
     ],
     providers: [],

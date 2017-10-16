@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System.IO;
 using System.Configuration;
 using Microsoft.Extensions.Configuration;
+using CustomersApp.Repositories;
 
 namespace CustomersApp
 {
@@ -23,7 +24,8 @@ namespace CustomersApp
       services.AddMvc();
 
       services.AddDbContext<CustomerContext>(options =>
-        options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+      options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+      services.AddTransient<ICustomerRepository, CustomerRepository>();
     }
 
     public void Configure(IApplicationBuilder app, IHostingEnvironment env)
