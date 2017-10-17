@@ -1336,19 +1336,6 @@ Observable_1.Observable.throw = throw_1._throw;
 
 /***/ }),
 
-/***/ "../../../../rxjs/add/operator/catch.js":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var Observable_1 = __webpack_require__("../../../../rxjs/Observable.js");
-var catch_1 = __webpack_require__("../../../../rxjs/operator/catch.js");
-Observable_1.Observable.prototype.catch = catch_1._catch;
-Observable_1.Observable.prototype._catch = catch_1._catch;
-//# sourceMappingURL=catch.js.map
-
-/***/ }),
-
 /***/ "../../../../rxjs/add/operator/do.js":
 /***/ (function(module, exports, __webpack_require__) {
 

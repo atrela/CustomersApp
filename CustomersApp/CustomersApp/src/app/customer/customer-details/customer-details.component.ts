@@ -47,11 +47,14 @@ export class CustomerDetailsComponent implements OnInit {
             this.isReadOnly = false;
             return;
         }
+        this.getData();
+        this.isReadOnly = true;
+    }
 
+    getData()
+    {
         this._httpService.get(this.id).subscribe(
             customer => this.customer = customer);
-
-        this.isReadOnly = true;
     }
 
     save() {
@@ -64,23 +67,21 @@ export class CustomerDetailsComponent implements OnInit {
             this._httpService.update(formValue);
             this.changeActivity();
         } else {
-            this._httpService.add(formValue);
-            this.goToCustomerList();
+            this._httpService.add(formValue).subscribe(() => this.goToCustomerList());
         }
     }
-
     cancel() {
         if (this.id == 0)
             this.goToCustomerList();
 
         else {
+            this.getData();
             this.changeActivity();
         }
     }
 
     delete() {
-        this._httpService.delete(this.id);
-        this.goToCustomerList();
+        this._httpService.delete(this.id).subscribe(() => this.goToCustomerList());
     }
 
     changeActivity() {

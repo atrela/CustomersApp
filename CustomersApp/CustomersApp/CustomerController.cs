@@ -28,9 +28,10 @@ namespace CustomersApp
     }
 
     [HttpPost]
-    public void Post([FromBody]Customer customer)
+    public IActionResult Post([FromBody]Customer customer)
     {
       _repository.Add(customer);
+      return Ok();
     }
 
     [HttpPut("{id}")]
@@ -40,9 +41,10 @@ namespace CustomersApp
     }
 
     [HttpDelete("{id}")]
-    public void Delete(int id)
+    public IActionResult Delete(int id)
     {
       _repository.Delete(id);
+      return Ok();
     }
   }
 }

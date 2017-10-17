@@ -267,7 +267,7 @@ NavigationComponent = __decorate([
 /***/ "../../../../../src/app/customer/customer-details/customer-details.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n  <div class='panel-heading'>\r\n    <h1 class=\"mt-5\">{{title}}</h1>\r\n\r\n  </div>\r\n\r\n  <form [formGroup]=\"form\" (ngSubmit)=\"save()\">\r\n    <br />\r\n   \r\n    <button type=\"button\" class=\"btn btn-danger float-right m-1\" *ngIf=\"isReadOnly\" data-toggle=\"modal\" data-target=\"#warningModal\">Delete</button>\r\n    <button type=\"button\" class=\"btn btn-info float-right m-1\" *ngIf=\"isReadOnly\" (click)=\"changeActivity()\">Edit</button>\r\n    <button type=\"button\" class=\"btn btn-warning float-right m-1\" *ngIf=\"!isReadOnly\" (click)=\"cancel()\">Cancel</button>\r\n    <button class=\"btn btn-success float-right m-1\" type=\"submit\" [disabled]=\"!form.valid\" *ngIf=\"!isReadOnly\">Save</button>\r\n    <br />\r\n    <br />\r\n    <div class=\"form-group\">\r\n      <label for=\"name\"\r\n             [class.active]=\"customer.name\"\r\n             data-error=\"Name is required and needs to contain at least 3 chars\">\r\n        Name:\r\n      </label>\r\n      <input id=\"name\" type=\"text\" class=\"form-control\" [readonly]=\"isReadOnly\"\r\n             [(ngModel)]=\"customer.name\" formControlName=\"name\"\r\n             [class.invalid]=\"form.controls['name'].touched && !form.controls['name'].valid\">\r\n      <div *ngIf=\"!form.controls['name'].valid && form.controls['name'].touched\"\r\n           class=\"alert alert-danger\">\r\n        \"Name\" is required and must be at least 3 characters long\r\n      </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label for=\"surname\"\r\n             [class.active]=\"customer.surname\"\r\n             data-error=\"Surname is required and needs to contain at least 3 chars\">\r\n        Surname:\r\n      </label>\r\n      <input id=\"name\" type=\"text\" class=\"validate form-control\" [readonly]=\"isReadOnly\"\r\n             [(ngModel)]=\"customer.surname\" formControlName=\"surname\"\r\n             [class.invalid]=\"form.controls['surname'].touched && !form.controls['surname'].valid\">\r\n      <div *ngIf=\"!form.controls['surname'].valid && form.controls['surname'].touched\"\r\n           class=\"alert alert-danger\">\r\n        \"Surname\" is required and must be at least 3 characters long\r\n      </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label for=\"address\"\r\n             [class.active]=\"customer.address\"\r\n             data-error=\"Address is required and needs to contain at least 3 chars\">\r\n        Address:\r\n      </label>\r\n      <input id=\"name\" type=\"text\" class=\"validate form-control\" [readonly]=\"isReadOnly\"\r\n             [(ngModel)]=\"customer.address\" formControlName=\"address\"\r\n             [class.invalid]=\"form.controls['address'].touched && !form.controls['address'].valid\">\r\n      <div *ngIf=\"!form.controls['address'].valid && form.controls['address'].touched\"\r\n           class=\"alert alert-danger\">\r\n        \"Address\" is required and must be at least 6 characters long\r\n      </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label for=\"telephoneNumber\" [class.active]=\"customer.telephoneNumber\">Telephone Number:</label>\r\n      <input id=\"telephoneNumber\" type=\"text\" class=\"validate form-control\" [readonly]=\"isReadOnly\"\r\n             [(ngModel)]=\"customer.telephoneNumber\" formControlName=\"telephoneNumber\">\r\n\r\n      <div *ngIf=\"!form.controls['telephoneNumber'].valid && form.controls['telephoneNumber'].touched\"\r\n           class=\"alert alert-danger\">\r\n        \"Telephone Number\" is required and must be 9 numbers long\r\n      </div>\r\n    </div>\r\n\r\n  </form>\r\n\r\n  <div class=\"modal fade\" id=\"warningModal\" role=\"dialog\">\r\n    <div class=\"modal-dialog\">\r\n\r\n      <div class=\"modal-content\">\r\n        <div class=\"modal-header\">\r\n          <h4 class=\"modal-title text-warning\">Confirmation</h4>\r\n        </div>\r\n        <div class=\"modal-body\">\r\n          <p>Are you sure you want to delete this item?</p>\r\n        </div>\r\n        <div class=\"modal-footer\">\r\n          <button type=\"button\" class=\"btn btn-success\"data-dismiss=\"modal\" (click)=\"delete()\" >Yes</button>\r\n          <button type=\"button\" class=\"btn btn-danger\" data-dismiss=\"modal\">No</button>\r\n        </div>\r\n      </div>\r\n\r\n    </div>\r\n  </div>\r\n\r\n\r\n</div>\r\n"
+module.exports = "<div class=\"container\">\r\n  <div class='panel-heading'>\r\n    <h1 class=\"mt-5\">{{title}}</h1>\r\n  </div>\r\n  <form [formGroup]=\"form\" (ngSubmit)=\"save()\">\r\n    <br />  \r\n    <button type=\"button\" class=\"btn btn-danger float-right m-1\" *ngIf=\"isReadOnly\" data-toggle=\"modal\" data-target=\"#warningModal\">Delete</button>\r\n    <button type=\"button\" class=\"btn btn-info float-right m-1\" *ngIf=\"isReadOnly\" (click)=\"changeActivity()\">Edit</button>\r\n    <button type=\"button\" class=\"btn btn-warning float-right m-1\" *ngIf=\"!isReadOnly\" (click)=\"cancel()\">Cancel</button>\r\n    <button class=\"btn btn-success float-right m-1\" type=\"submit\" [disabled]=\"!form.valid\" *ngIf=\"!isReadOnly\">Save</button>\r\n    <br />\r\n    <br />\r\n    <div class=\"form-group\">\r\n      <label for=\"name\"\r\n             [class.active]=\"customer.name\"\r\n             data-error=\"Name is required and needs to contain at least 3 chars\">\r\n        Name:\r\n      </label>\r\n      <input id=\"name\" type=\"text\" class=\"form-control\" [readonly]=\"isReadOnly\"\r\n             [(ngModel)]=\"customer.name\" formControlName=\"name\"\r\n             [class.invalid]=\"form.controls['name'].touched && !form.controls['name'].valid\">\r\n      <div *ngIf=\"!form.controls['name'].valid && form.controls['name'].touched\"\r\n           class=\"alert alert-danger\">\r\n        \"Name\" is required and must be at least 3 characters long\r\n      </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label for=\"surname\"\r\n             [class.active]=\"customer.surname\"\r\n             data-error=\"Surname is required and needs to contain at least 3 chars\">\r\n        Surname:\r\n      </label>\r\n      <input id=\"name\" type=\"text\" class=\"validate form-control\" [readonly]=\"isReadOnly\"\r\n             [(ngModel)]=\"customer.surname\" formControlName=\"surname\"\r\n             [class.invalid]=\"form.controls['surname'].touched && !form.controls['surname'].valid\">\r\n      <div *ngIf=\"!form.controls['surname'].valid && form.controls['surname'].touched\"\r\n           class=\"alert alert-danger\">\r\n        \"Surname\" is required and must be at least 3 characters long\r\n      </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label for=\"address\"\r\n             [class.active]=\"customer.address\"\r\n             data-error=\"Address is required and needs to contain at least 3 chars\">\r\n        Address:\r\n      </label>\r\n      <input id=\"name\" type=\"text\" class=\"validate form-control\" [readonly]=\"isReadOnly\"\r\n             [(ngModel)]=\"customer.address\" formControlName=\"address\"\r\n             [class.invalid]=\"form.controls['address'].touched && !form.controls['address'].valid\">\r\n      <div *ngIf=\"!form.controls['address'].valid && form.controls['address'].touched\"\r\n           class=\"alert alert-danger\">\r\n        \"Address\" is required and must be at least 6 characters long\r\n      </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label for=\"telephoneNumber\" [class.active]=\"customer.telephoneNumber\">Telephone Number:</label>\r\n      <input id=\"telephoneNumber\" type=\"text\" class=\"validate form-control\" [readonly]=\"isReadOnly\"\r\n             [(ngModel)]=\"customer.telephoneNumber\" formControlName=\"telephoneNumber\">\r\n      <div *ngIf=\"!form.controls['telephoneNumber'].valid && form.controls['telephoneNumber'].touched\"\r\n           class=\"alert alert-danger\">\r\n        \"Telephone Number\" is required and must be 9 numbers long\r\n      </div>\r\n    </div>\r\n  </form>\r\n  <div class=\"modal fade\" id=\"warningModal\" role=\"dialog\">\r\n    <div class=\"modal-dialog\">\r\n      <div class=\"modal-content\">\r\n        <div class=\"modal-header\">\r\n          <h4 class=\"modal-title text-warning\">Confirmation</h4>\r\n        </div>\r\n        <div class=\"modal-body\">\r\n          <p>Are you sure you want to delete this item?</p>\r\n        </div>\r\n        <div class=\"modal-footer\">\r\n          <button type=\"button\" class=\"btn btn-success\"data-dismiss=\"modal\" (click)=\"delete()\" >Yes</button>\r\n          <button type=\"button\" class=\"btn btn-danger\" data-dismiss=\"modal\">No</button>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -322,17 +322,21 @@ var CustomerDetailsComponent = (function () {
         });
     }
     CustomerDetailsComponent.prototype.ngOnInit = function () {
-        var _this = this;
         this.id = +this._route.snapshot.paramMap.get('id');
         this.title = this.id ? 'Manage Customer' : 'New Customer';
         if (!this.id) {
             this.isReadOnly = false;
             return;
         }
-        this._httpService.get(this.id).subscribe(function (customer) { return _this.customer = customer; });
+        this.getData();
         this.isReadOnly = true;
     };
+    CustomerDetailsComponent.prototype.getData = function () {
+        var _this = this;
+        this._httpService.get(this.id).subscribe(function (customer) { return _this.customer = customer; });
+    };
     CustomerDetailsComponent.prototype.save = function () {
+        var _this = this;
         var formValue = this.form.value;
         if (this.id > 0)
             formValue.customerId = this.id;
@@ -341,20 +345,20 @@ var CustomerDetailsComponent = (function () {
             this.changeActivity();
         }
         else {
-            this._httpService.add(formValue);
-            this.goToCustomerList();
+            this._httpService.add(formValue).subscribe(function () { return _this.goToCustomerList(); });
         }
     };
     CustomerDetailsComponent.prototype.cancel = function () {
         if (this.id == 0)
             this.goToCustomerList();
         else {
+            this.getData();
             this.changeActivity();
         }
     };
     CustomerDetailsComponent.prototype.delete = function () {
-        var isDeleted = this._httpService.delete(this.id);
-        this.goToCustomerList();
+        var _this = this;
+        this._httpService.delete(this.id).subscribe(function () { return _this.goToCustomerList(); });
     };
     CustomerDetailsComponent.prototype.changeActivity = function () {
         this.isReadOnly = !this.isReadOnly;
@@ -516,12 +520,10 @@ var CustomerRouting = __WEBPACK_IMPORTED_MODULE_0__angular_router__["c" /* Route
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_do__ = __webpack_require__("../../../../rxjs/add/operator/do.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_do___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_do__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__ = __webpack_require__("../../../../rxjs/add/operator/catch.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_observable_throw__ = __webpack_require__("../../../../rxjs/add/observable/throw.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_observable_throw___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_observable_throw__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_observable_throw__ = __webpack_require__("../../../../rxjs/add/observable/throw.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_observable_throw___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_observable_throw__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -531,7 +533,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
 
 
 
@@ -554,18 +555,17 @@ var CustomerService = (function () {
     };
     CustomerService.prototype.getAll = function () {
         return this._http.get(this._url)
-            .map(function (response) { return response.json(); })
-            .do(function (data) { return console.log((data)); });
+            .map(function (response) { return response.json(); });
     };
     CustomerService.prototype.get = function (customerId) {
         return this._http.get(this.getCustomerUrl(customerId))
             .map(function (response) { return response.json(); });
     };
     CustomerService.prototype.delete = function (customerId) {
-        this._http.delete(this.getCustomerUrl(customerId)).subscribe();
+        return this._http.delete(this.getCustomerUrl(customerId));
     };
     CustomerService.prototype.add = function (customer) {
-        this._http.post(this._url, JSON.stringify(customer), this._options).subscribe();
+        return this._http.post(this._url, JSON.stringify(customer), this._options);
     };
     CustomerService.prototype.update = function (customer) {
         this._http.put(this.getCustomerUrl(customer.customerId), JSON.stringify(customer), this._options).subscribe();

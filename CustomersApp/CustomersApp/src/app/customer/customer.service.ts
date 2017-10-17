@@ -39,19 +39,18 @@ export class CustomerService {
             .map((response: Response) => <ICustomer>response.json());
     }
 
-    delete(customerId: number){
-        this._http.delete(
+    delete(customerId: number): Observable<Response> {
+        return this._http.delete(
             this.getCustomerUrl(customerId)
-        ).subscribe();
-
+            );
     }
 
-    add(customer: ICustomer) {
-        this._http.post(
+    add(customer: ICustomer): Observable<Response> {
+        return this._http.post(
             this._url,
             JSON.stringify(customer),
             this._options
-        ).subscribe();
+        );
     }
 
     update(customer: ICustomer) {
@@ -61,5 +60,4 @@ export class CustomerService {
             this._options
         ).subscribe();
     }
-
 }
