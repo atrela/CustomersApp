@@ -2,11 +2,9 @@
   <div class='panel-heading'>
     <h1 class="mt-5">All Customers</h1>
     <br />
-    <br />
+    <button class="btn btn-success float-right m-1" type="button" [routerLink]="['/customer']">Create</button>
   </div>
   <div class='panel-body'>
-   
-
     <div class='table-responsive'>
       <table class='table table-hover'  *ngIf='customers && customers.length'>
         <thead>
@@ -30,7 +28,4 @@
   </div>
 </div>
 
-<div *ngIf='errorMessage' class='alert alert-danger'>
-   {{ errorMessage }}
-</div>
 

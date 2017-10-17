@@ -11,7 +11,6 @@ import { ICustomer } from "../customer";
 export class CustomerListComponent implements OnInit {
 
     customers: ICustomer[];
-    errorMessage: string;
 
     constructor(private _httpService: CustomerService) {
 
@@ -21,8 +20,7 @@ export class CustomerListComponent implements OnInit {
         this._httpService.getAll()
             .subscribe(customers => {
                 this.customers = customers
-            },
-            error => this.errorMessage = <any>error);
+            });
     };
 
 };

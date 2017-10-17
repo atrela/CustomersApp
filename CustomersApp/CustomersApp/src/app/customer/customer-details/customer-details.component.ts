@@ -12,9 +12,9 @@ import { Customer } from "../customer";
 export class CustomerDetailsComponent implements OnInit {
     private id: number;
     private customer: Customer = new Customer();
-    private errorMessage: string;
     private form: FormGroup;
     private title: string;
+    private isReadOnly: boolean;
 
     constructor(private _httpService: CustomerService,
         private _productService: CustomerService, private _router: Router, private _route: ActivatedRoute,
@@ -40,37 +40,54 @@ export class CustomerDetailsComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        const id = +this._route.snapshot.paramMap.get('id');
-        this.title = id ? 'Edit Customer' : 'New Customer';
+        this.id = +this._route.snapshot.paramMap.get('id');
+        this.title = this.id ? 'Manage Customer' : 'New Customer';
 
-        if (!id)
+        if (!this.id) {
+            this.isReadOnly = false;
             return;
+        }
 
-        this._httpService.get(id).subscribe(
-            customer => this.customer = customer,
-            error => this.errorMessage = <any>error);
+        this._httpService.get(this.id).subscribe(
+            customer => this.customer = customer);
+
+        this.isReadOnly = true;
     }
 
     save() {
-        var result,
-            userValue = this.form.value as ICustomer;
+        var formValue = this.form.value as ICustomer;
 
-        const id = +this._route.snapshot.paramMap.get('id');
+        if (this.id > 0)
+            formValue.customerId = this.id;
 
-        if (id > 0)
-            userValue.customerId = id;
-
-        if (userValue.customerId) {
-            this._httpService.update(userValue);
-            console.log('udate');
-            console.log(userValue);
+        if (formValue.customerId) {
+            this._httpService.update(formValue);
+            this.changeActivity();
         } else {
-            //result = this.usersService.addUser(userValue);
-            this._httpService.add(userValue);
-            console.log('new record');
-            console.log(userValue);
+            this._httpService.add(formValue);
+            this.goToCustomerList();
         }
+    }
 
-        //result.subscribe(data => this._router.navigate(['customers']));
+    cancel() {
+        if (this.id == 0)
+            this.goToCustomerList();
+
+        else {
+            this.changeActivity();
+        }
+    }
+
+    delete() {
+        this._httpService.delete(this.id);
+        this.goToCustomerList();
+    }
+
+    changeActivity() {
+        this.isReadOnly = !this.isReadOnly;
+    }
+
+    goToCustomerList() {
+        this._router.navigateByUrl('/customers')
     }
 }

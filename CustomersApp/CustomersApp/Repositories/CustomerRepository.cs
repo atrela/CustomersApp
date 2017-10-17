@@ -27,7 +27,6 @@ namespace CustomersApp.Repositories
     {
       Customer customer = Get(id);
       _customerEntity.Remove(customer);
-      _context.SaveChanges();
     }
 
     public Customer Get(int id)
